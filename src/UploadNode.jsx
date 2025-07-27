@@ -16,7 +16,7 @@ export default function UploadNode({ id, data }) {
 
     try {
       setStatus("uploading");
-      const response = await axios.post("http://localhost:8000/upload/", formData, {
+      const response = await axios.post("https://promptea-server.onrender.com/upload/", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       console.log("Server response:", response.data);
