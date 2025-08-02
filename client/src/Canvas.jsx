@@ -118,7 +118,7 @@ export default function Canvas() {
         let responseMessage;
 
         try {
-            const res = await fetch("https://sandeepseesa-promptea-server.hf.space//search", {
+            const res = await fetch("https://sandeepseesa-promptea-server.hf.space/search", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
