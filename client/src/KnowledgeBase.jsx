@@ -18,7 +18,7 @@ export default function KnowledgeBaseNode({ id, data }) {
 
     try {
       setStatus("uploading");
-      await axios.post("https://promptea-server.onrender.com/upload", formData , {
+      await axios.post("https://sandeepseesa-promptea-server.hf.space/upload", formData , {
   headers: {
     "Content-Type": "multipart/form-data",
   },
