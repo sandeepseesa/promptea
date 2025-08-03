@@ -38,7 +38,6 @@ def extract_text_from_docx(file):
             text += paragraph.text + "\n"
     except Exception as e:
         print(f"Error reading DOCX file: {e}")
-    # Normalize text by replacing multiple newlines with a single space
     import re
     text = re.sub(r'\n{2,}', '\n\n', text)
     text = re.sub(r'(?<!\n)\n(?!\n)', ' ', text)

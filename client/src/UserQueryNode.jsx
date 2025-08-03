@@ -10,14 +10,12 @@ export default function UserQueryNode({ id, data }) {
     const value = e.target.value;
     setQuery(value);
 
-    // Update node data in canvas
     setNodes((nds) =>
       nds.map((node) =>
         node.id === id ? { ...node, data: { ...node.data, query: value } } : node
       )
     );
 
-    // Auto-resize
     textareaRef.current.style.height = "auto";
     textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
   };

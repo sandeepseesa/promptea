@@ -35,7 +35,7 @@ export default function KnowledgeBaseNode({ id, data }) {
                 ...node,
                 data: {
                   ...node.data,
-                  documentName: file.name, // e.g. resume.pdf
+                  documentName: file.name, 
                 },
               }
             : node

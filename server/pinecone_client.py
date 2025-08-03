@@ -31,7 +31,7 @@ groq_client = OpenAI(
 # Check if a document already exists in Pinecone
 def document_exists(document_id: str) -> bool:
     response = index.query(
-        vector=[0.0] * 384,  # dummy vector (same dim as embedding)
+        vector=[0.0] * 384, 
         top_k=1,
         filter={"document_id": document_id},
         include_values=False
@@ -46,7 +46,7 @@ def upload_chunks_to_pinecone(chunks, embeddings, document_id):
     vectors = []
     for chunk, embedding in zip(chunks, embeddings):
         vectors.append((
-            str(uuid.uuid4()),  # unique chunk ID
+            str(uuid.uuid4()),
             embedding,
             {
                 "text": chunk,

@@ -3,8 +3,8 @@ import { Handle, Position, useReactFlow } from "reactflow";
 import { useGlobalStore} from "reactflow-canvas-store";
 
 export default function LLMEngineNode({ id, data }) {
-  const [model, setModel] = useGlobalStore("model"); // Default model
-  const { setNodes } = useReactFlow(); // ✅ grab from context
+  const [model, setModel] = useGlobalStore("model");
+  const { setNodes } = useReactFlow(); 
 
   const handleChange = (e) => {
     const selectedModel = e.target.value;

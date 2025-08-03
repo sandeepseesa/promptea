@@ -27,13 +27,10 @@ export default function OutputNode({ id, data }) {
     const query = input.trim();
     setLoading(true);
 
-    // ✅ Get latest nodes from the React Flow store
-    // const currentNodes = useStore.getState().getNodes(); // if you’re using reactflow v11+
     const currentNodes = getNodes();
     const llmNode = currentNodes.find((n) => n.type === "LLMEngine");
-    const selectedLLM = llmNode?.data?.selectedLLM || "llama3"; // fallback default
+    const selectedLLM = llmNode?.data?.selectedLLM || "llama3"; // default
 
-    // Get KnowledgeBase node file name
     const kbNode = currentNodes.find((n) => n.type === "KnowledgeBase");
     const documentName = kbNode?.data?.documentName || null;
 
@@ -56,7 +53,6 @@ export default function OutputNode({ id, data }) {
 
 
       const result = await res.json();
-      // console.log("Parsed JSON result:", result);
       if (result.error) {
         llmResponse = {
           sender: "llm",
@@ -81,8 +77,6 @@ export default function OutputNode({ id, data }) {
       }
       console.log("🧠 Constructed llmResponse:", llmResponse);
 
-
-      // Update chat
       setNodes((nds) =>
         nds.map((n) =>
           n.id === id
@@ -101,7 +95,7 @@ export default function OutputNode({ id, data }) {
         )
       );
     } catch (err) {
-      console.error("❌ Fetch failed:", err);  // Shows network or parsing errors in DevTools
+      console.error("❌ Fetch failed:", err); 
 
       const errorMessage =
         err instanceof Error

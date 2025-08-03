@@ -130,7 +130,6 @@ async def search_document(request: SearchRequest):
         import traceback
         traceback.print_exc()
 
-        # Return full error to frontend
         return JSONResponse(
             status_code=500,
             content={"error": f"{str(e)}"}

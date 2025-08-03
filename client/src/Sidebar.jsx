@@ -1,6 +1,5 @@
 
 import React from "react";
-// import { nodeTypes } from "../utils/nodeTypes";
 
 const nodeTypes = {
   userQuery: { label: "User Query", type: "userQuery" },

@@ -19,7 +19,6 @@ function App() {
 //       </ReactFlowProvider>
 //     </div>
 <div className="flex flex-col h-screen">
-  {/* Top Palette Section */}
   <div className="p-4 bg-gray-100">
     <SidePanel />
   </div>
