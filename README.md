@@ -62,7 +62,7 @@ Before you begin, ensure you have met the following requirements:
   - Pinecone
   - Google Generative AI (Gemini)
   - Groq (Llama3)
-  - SerpAPI (optional, for web search)
+  - SerpAPI (for web search)
 
 ## Backend Setup
 
