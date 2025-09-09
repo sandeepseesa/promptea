@@ -1,4 +1,5 @@
 # DocGPT - AI-Powered Document Search and Query System
+https://promptea-frontend.onrender.com/
 
 DocGPT is a full-stack web application that allows users to upload PDF and DOCX documents, extract text content, generate embeddings, and perform intelligent searches using various AI models. The system leverages open ai, llama3 , serp api technologies to provide accurate and context-aware answers to user queries based on uploaded documents or web search results.
 
