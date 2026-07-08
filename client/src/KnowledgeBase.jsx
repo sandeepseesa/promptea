@@ -18,7 +18,8 @@ export default function KnowledgeBaseNode({ id, data }) {
 
     try {
       setStatus("uploading");
-      await axios.post("https://sandeepseesa-promptea-server.hf.space/upload", formData , {
+      // await axios.post("https://sandeepseesa-promptea-server.hf.space/upload", formData , {
+      await axios.post("http://localhost:8000/upload", formData , {
   headers: {
     "Content-Type": "multipart/form-data",
   },

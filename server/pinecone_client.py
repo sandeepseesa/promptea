@@ -21,7 +21,7 @@ index = pc.Index(PINECONE_INDEX_NAME)
 import uuid
 
 genai.configure(api_key=GOOGLE_API_KEY)
-gemini_model = genai.GenerativeModel('models/gemini-1.5-flash')
+gemini_model = genai.GenerativeModel('models/gemini-2.0-flash')
 
 groq_client = OpenAI(
     api_key=GROQ_API_KEY,
@@ -90,11 +90,12 @@ def query_gemini_llm(query, retrieved_chunks):
     return response.text
 
 
-def query_groq_llm(query: str, retrieved_chunks, model: str = "llama3-70b-4096") -> str:
+def query_groq_llm(query: str, retrieved_chunks, model: str = "llama-3.3-70b-versatile") -> str:
     context = "\n".join(retrieved_chunks) if retrieved_chunks else ""
     prompt = f"""Answer the following question{" based only on the provided document content" if context else ""}:\n\n{context}\n\nQuestion: {query}\nAnswer:"""
     response = groq_client.chat.completions.create(
-        model=model,
+        # model=model,
+        model="llama-3.3-70b-versatile",
         # max_tokens=512,
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},

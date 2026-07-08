@@ -25,7 +25,7 @@ app.add_middleware(
 
 @app.get("/")
 async def read_root():
-    return "Hello, World!"
+    return "Hi welcome to promptea"
 
 class Item:
     def __init__(self, name: str, price: float):
@@ -56,7 +56,7 @@ async def create_item(file: UploadFile = File(...)):
             chunks = split_into_chunks(content)
             model = SentenceTransformer("BAAI/bge-small-en-v1.5")
 
-            def embed_chunks(chunks):
+            def embed_chunks(chunks): 
                 return model.encode(chunks, convert_to_numpy=True)
             embeddings = embed_chunks(chunks)
             
@@ -77,6 +77,7 @@ class SearchRequest(BaseModel):
 
 @app.post("/search")
 async def search_document(request: SearchRequest):
+    print(f"Search request received: {request}")
     try:
         print(f"Search request: {request.query}, Model: {request.model}, Document: {request.documentName}, Top K: {request.top_k}")
         if request.documentName: 
@@ -93,7 +94,7 @@ async def search_document(request: SearchRequest):
                 #     }
 
             if request.model == "llama3":
-                answer = query_groq_llm(request.query, retrieved_chunks, model="llama3-70b-8192")
+                answer = query_groq_llm(request.query, retrieved_chunks, model="llama-3.3-70b-versatile")
             elif request.model == "gemini":
                 answer = query_gemini_llm(request.query, retrieved_chunks)
             elif request.model == "serpapi":
@@ -110,8 +111,9 @@ async def search_document(request: SearchRequest):
             }
 
         else:  
+            print(request.query, request.model)
             if request.model == "llama3":
-                answer = query_groq_llm(request.query, [], model="llama3-70b-8192")  # empty context
+                answer = query_groq_llm(request.query, [], model="llama-3.3-70b-versatlie")  # empty context
             elif request.model == "gemini":
                 answer = query_gemini_llm(request.query, [])
             elif request.model == "serpapi":
