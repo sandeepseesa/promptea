@@ -1,5 +1,5 @@
 ---
-title: Metadata Hf
+title: prompt-server
 emoji: 🤖
 colorFrom: green
 colorTo: blue
