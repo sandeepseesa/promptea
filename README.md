@@ -1,12 +1,3 @@
----
-title: Metadata for Hf
-emoji: 🤖
-colorFrom: green
-colorTo: blue
-sdk: docker
-app_port: 7860
----
-
 
 # Promptea - AI-Powered Document Search and Query System
 https://promptea-frontend.onrender.com/
