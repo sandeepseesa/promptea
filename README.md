@@ -1,3 +1,12 @@
+---
+title: FastAPI RAG Agent
+emoji: 🤖
+colorFrom: green
+colorTo: blue
+sdk: docker
+pinned: false
+---
+
 # Promptea - AI-Powered Document Search and Query System
 https://promptea-frontend.onrender.com/
 
